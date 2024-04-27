@@ -22,18 +22,14 @@ class TareaController extends Controller
      */
     public function store(Request $request)
     {
-      
         $validator = Validator::make($request->all(), [
             'descripcion' => 'required|string|max:255',
             'ejecutada' => 'required|string|max:1',
         ]);
 
-    
         if ($validator->fails()) {
             return response()->json(['errors' => $validator->errors()], 422);
         }
-
-        
 
         $tarea = Tarea::create($request->all());
 
@@ -55,7 +51,7 @@ class TareaController extends Controller
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
-            'descripcion' => 'required|string',
+            'descripcion' => 'required|string|max:255',
             'ejecutada' => 'required|string|max:1',
         ]);
 

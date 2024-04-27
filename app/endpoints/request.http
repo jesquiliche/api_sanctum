@@ -1,4 +1,4 @@
-@accessToken = 1|gxdmTQJqxw0Euk5NwXTIBBmESN0tpmlDCC83AgCT27aa7e56
+@accessToken = 2|FDaMlBCRe5ZfRsVWjrDrvyBkoMcPCQ3SxbU3PgrT2be10965
 #### Login
 
 POST  http://127.0.0.1:8000/api/login
@@ -56,6 +56,9 @@ Authorization: Bearer {{accessToken}}
 }
 
 ### Obtener Tarea por Id
-DELETE   http://localhost:8000/api/tareas/1
+
+DELETE   http://localhost:8000/api/tareas/2
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
 
 
