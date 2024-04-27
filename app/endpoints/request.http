@@ -1,5 +1,4 @@
-@accessToken = 13|aX7Pvz5rUfseBYX2HkGDT4KK20GSjb8R6xr87Rvhc8d07201
-
+@accessToken = 1|gxdmTQJqxw0Euk5NwXTIBBmESN0tpmlDCC83AgCT27aa7e56
 #### Login
 
 POST  http://127.0.0.1:8000/api/login
@@ -16,7 +15,7 @@ Content-Type: application/json
 
 {
     "name":"pepe",
-    "email":"admin4@test.com",
+    "email":"admin40@test.com",
     "password":"admin_password"
 }
 
@@ -29,212 +28,34 @@ POST  http://127.0.0.1:8000/api/refresh
 Authorization: Bearer {{accessToken}}
 
 
-#### Obtener todos los colores
-GET http://localhost:8000/api/v1/colores
+#### Obtener todos las tareas
+GET http://localhost:8000/api/tareas
 
-### Crear color
-POST   http://localhost:8000/api/v1/colores
+#### Obtener una tarea
+GET http://localhost:8000/api/tareas/2
+
+### Crear tarea
+POST   http://localhost:8000/api/tareas
 Content-Type: application/json
 Authorization: Bearer {{accessToken}}
 
 {
-    "nombre":"Rojo"
+    "descripcion": "tarea 1",
+    "ejecutada": "S"
 }
 
-### Obtener color por Id
-GET   http://localhost:8000/api/v1/colores/1
 
-
-### Modificicar color
-DELETE   http://localhost:8000/api/v1/colores/1
+### Actualizar tarea
+PUT   http://localhost:8000/api/tareas/2
 Content-Type: application/json
 Authorization: Bearer {{accessToken}}
 
 {
-    "nombre":"Prueba 2"
+    "descripcion": "tarea 2",
+    "ejecutada": "S"
 }
 
-#### Obtener todos los paises
-GET http://localhost:8000/api/v1/paises
-
-#### Obtener pais por su id
-GET http://localhost:8000/api/v1/paises/2
-
-### Crear país
-POST   http://localhost:8000/api/v1/paises
-Content-Type: application/json
-Authorization: Bearer {{accessToken}}
-
-{
-    "nombre":"Peru"
-}
-
-### Modificar  país
-PUT   http://localhost:8000/api/v1/paises/1
-Content-Type: application/json
-Authorization: Bearer {{accessToken}}
-
-{
-    "nombre":"Pais modificado"
-}
-
-### Borrando pais
-DELETE   http://localhost:8000/api/v1/paises/9
-Authorization: Bearer {{accessToken}}
-
-
-#### Obtener todos los tipos
-GET http://localhost:8000/api/v1/tipos
-
-#### Obtener tipo por su id
-GET http://localhost:8000/api/v1/tipos/1
-
-### Crear tipo
-POST   http://localhost:8000/api/v1/tipos
-Content-Type: application/json
-Authorization: Bearer {{accessToken}}
-
-{
-    "nombre":"Sin alcohol"
-}
-
-### Modificar tipo
-PATCH    http://localhost:8000/api/v1/tipos/11
-Content-Type: application/json
-Authorization: Bearer {{accessToken}}
-
-{
-    "update_at":"32323323",
-    "nombre":"Doble malta",
-    "descripcion":"Prueba"
-}
-
-### Borrar tipo
-DELETE   http://localhost:8000/api/v1/tipos/2
-Authorization: Bearer {{accessToken}}
-
-#### Obtener todas las graduaciones
-GET http://localhost:8000/api/v1/graduaciones
-
-#### Obtener graduación por su id
-GET http://localhost:8000/api/v1/graduaciones/5
-
-### Crear graduación
-POST   http://localhost:8000/api/v1/tipos
-Content-Type: application/json
-Authorization: Bearer {{accessToken}}
-
-{
-    "nombre":"Super toxica"
-}
-
-### Obtener graduaciones
-GET   http://localhost:8000/api/v1/graduaciones
-
-
-
-
-
-### Modificar tipo
-PUT   http://localhost:8000/api/v1/graduaciones/3
-Content-Type: application/json
-Authorization: Bearer {{accessToken}}
-
-{
-    "nombre":"Puro alcohol"
-}
-
-### Bor6543rar tipo
-DELETE   http://localhost:8000/api/v1/graduaciones/1
-Authorization: Bearer {{accessToken}}
-
-
-#### Obtener las cervezas
-GET http://localhost:8000/api/v1/cervezas?pais_id=0
-
-
-#### Obtener una cerveza
-GET http://localhost:8000/api/v1/cervezas/2
-
-#### Obtener las cervezas
-GET http://localhost:8000/api/v1/cervezas?per_page=1&novedad=0&marca=a
-
-#### Crear cerveza
-POST   http://localhost:8000/api/v1/cervezas
-Content-Type: application/json
-Authorization: Bearer {{accessToken}}
-
-{
-    "nombre":"Cerveza Voldamm14",
-    "descripcion":"La mejor cerveza de españa",
-    "color_id":4,
-    "graduacion_id":2,
-    "tipo_id":1,
-    "pais_id":1,
-    "novedad":1,
-    "oferta":1,
-    "precio":0,
-    "foto":"imagen",
-    "marca":"damm"
-}
-
-#### Modificar cerveza
-PUT   http://localhost:8000/api/v1/cervezas/14
-Content-Type: application/json
-Authorization: Bearer {{accessToken}}
-
-{
-    "nombre":"Cerveza Voldamm Modificada",
-    "descripcion":"La mejor cerveza de españa erer",
-    "color_id":4,
-    "graduacion_id":2,
-    "tipo_id":1,
-    "pais_id":1,
-    "novedad":1,
-    "oferta":1,
-    "precio":0,
-    "marca":"damm"
-}
-
-#### Modificar cerveza
-PATCH  http://localhost:8000/api/v1/cervezas/15
-Content-Type: application/json
-Authorization: Bearer {{accessToken}}
-
-{
-    "id": 13,
-    "novedad":1,
-    "oferta":1,
-    "tipo_id": 16,
-   
-    
-}
-#### Borrar cerveza
-DELETE  http://localhost:8000/api/v1/cervezas/1
-Authorization: Bearer {{accessToken}}
-
-#### Obtener cervezas por pais
-GET  http://localhost:8000/api/v1/consultaCervezasPorPais
-
-#### Obtener cervezas por pais
-GET  http://localhost:8000/api/v1/stockPorPais
-
-#### Obtener cervezas por pais
-GET  http://localhost:8000/api/v1/consultaCervezasPorTipo
-
-#### Obtener cervezas por graduacion
-GET  http://localhost:8000/api/v1/consultaCervezasPorGraduaciones
-
-#### Obtener cervezas por pais
-GET  http://localhost:8000/api/v1/consultaTablas
-
-#### Obtener cervezas por pais
-GET  http://localhost:8000/api/v1/consultaDB
-
-
-
-
-
-
+### Obtener Tarea por Id
+DELETE   http://localhost:8000/api/tareas/1
 
 
